@@ -26,7 +26,7 @@ public class UserController {
 
 	@Autowired
 	private UserService userService; 
-	
+	//testing third push commit
 	@GetMapping("/users")
 	public List<User> getAllUsers(){
 		return userService.getAllUserList();
