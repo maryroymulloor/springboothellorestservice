@@ -30,11 +30,11 @@ public class UserController {
 	@GetMapping("/users")
 	public List<User> getAllUsers(){
 		return userService.getAllUserList();
-	}
+	} 
 	
-	@PostMapping("/createUser")
+	@PostMapping("/createUser") 
 	public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder builder) {
-		try {
+		try {   
 			userService.createUser(user);
 			HttpHeaders httpheader = new HttpHeaders();
 			httpheader.setLocation(builder.path("users/{id}").buildAndExpand(user.getId()).toUri());
