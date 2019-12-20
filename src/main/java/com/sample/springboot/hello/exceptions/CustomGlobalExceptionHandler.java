@@ -23,7 +23,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 		CustomErrorDetails customErrorDetails = new CustomErrorDetails(new Date(), 
 				"fromMethodArgumentNotValid in GEH", 
-				ex.getLocalizedMessage());
+				ex.getLocalizedMessage()); 
 		return new ResponseEntity<>(customErrorDetails, HttpStatus.BAD_REQUEST);
 	}
 	
